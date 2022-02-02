@@ -1,14 +1,11 @@
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
-import Billing from "layouts/billing";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import RoomAvailability from "layouts/roomAvailability";
-// import SignUp from "layouts/authentication/sign-up";
-
-// @mui icons
 import Icon from "@mui/material/Icon";
+import Tables from "layouts/tables";
 
 const routes = [
   {
@@ -38,11 +35,11 @@ const routes = [
   
   {
     type: "collapse",
-    name: "Noticelist",
+    name: "Notice List",
     key: "billing",
     icon: <Icon fontSize="small">receipt_long</Icon>,
     route: "/billing",
-    component: <Billing />,
+    component: <Tables/>,
   },
   {
     type: "collapse",
