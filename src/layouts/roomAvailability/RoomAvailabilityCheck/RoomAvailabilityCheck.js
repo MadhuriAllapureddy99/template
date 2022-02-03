@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 //import Header from '../Components/Header';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import Stack from '@mui/material/Stack';
 //import { createStyles, makeStyles } from '@mui/styles';
 //import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {
@@ -10,6 +11,7 @@ import {
     Typography
 } from '@mui/material';
 import Textfield from '../Components/FormsUI/Textfield';
+
 import Button from '../Components/FormsUI/Button/index';
 
 import moment from 'moment'
@@ -173,186 +175,185 @@ const GuestLoginForm = () => {
     }
     return (
 
-    <Grid container>
-        <Grid item xs={12}>
-            <Container maxWidth="md">
-                <div >
+        <Grid container>
+            <Grid item xs={12}>
+                <Container maxWidth="md">
+                    <div >
 
-                    <Formik
-                        initialValues={
-                            INITIAL_FORM_STATE
-                        }
-                        validationSchema={FORM_VALIDATION}
-                        onSubmit={values => {
-                            console.log(values);
-                        }}
-                    >
-
-
-                        <Form>
-
-                            <Grid container spacing={2}>
-
-                                <Grid item xs={3}>
-                                    <FormControl fullWidth>
-                                        <InputLabel id="demo-simple-select-label">Property</InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                            value={property}
-                                            label="Property"
-                                            onChange={handleChangeOption}
-                                        >
-                                            <MenuItem value={10}>Building A</MenuItem>
-                                            <MenuItem value={20}>Building B</MenuItem>
-                                            <MenuItem value={30}>Building C</MenuItem>
-                                            <MenuItem value={40}>Building D</MenuItem>
-                                            <MenuItem value={50}>Building E</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                </Grid>
+                        <Formik
+                            initialValues={
+                                INITIAL_FORM_STATE
+                            }
+                            validationSchema={FORM_VALIDATION}
+                            onSubmit={values => {
+                                console.log(values);
+                            }}
+                        >
 
 
+                            <Form>
 
-                                <Grid item xs={3}>
-                                    <FormControl fullWidth>
-                                        <InputLabel id="demo-simple-select-label">Room Type</InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                            value={roomType}
-                                            label="Room Type"
-                                            onChange={handleChangeRoomType}
-                                        >
-                                            <MenuItem value={11}>AC Room</MenuItem>
-                                            <MenuItem value={12}>Non AC Room</MenuItem>
+                                <Grid container spacing={2}>
 
-                                        </Select>
-                                    </FormControl>
-                                </Grid>
+                                    <Grid item xs={3}>
+                                        <FormControl fullWidth>
+                                            <InputLabel id="demo-simple-select-label">Property</InputLabel>
+                                            <Select sx={{ minHeight: 44 }}
+                                                labelId="demo-simple-select-label"
+                                                id="demo-simple-select"
+                                                value={property}
+                                                label="Property"
+                                                onChange={handleChangeOption}
+                                            >
+                                                <MenuItem value={10}>Building A</MenuItem>
+                                                <MenuItem value={20}>Building B</MenuItem>
+                                                <MenuItem value={30}>Building C</MenuItem>
+                                                <MenuItem value={40}>Building D</MenuItem>
+                                                <MenuItem value={50}>Building E</MenuItem>
+                                            </Select>
+                                        </FormControl>
+                                    </Grid>
 
 
 
-                                <Grid item xs={3}>
-                                    <FormControl fullWidth>
-                                        <InputLabel id="demo-simple-select-label">Sharing</InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                            value={sharing}
-                                            label="Sharing"
-                                            onChange={handleChangeSharing}
-                                        >
-                                            <MenuItem value={13}>1 sharing</MenuItem>
-                                            <MenuItem value={14}>2 sharing</MenuItem>
-                                            <MenuItem value={15}>3 sharing</MenuItem>
-                                            <MenuItem value={16}>4 sharing</MenuItem>
+                                    <Grid item xs={3}>
+                                        <FormControl fullWidth>
+                                            <InputLabel id="demo-simple-select-label">Room Type</InputLabel>
+                                            <Select sx={{ minHeight: 44 }}
+                                                labelId="demo-simple-select-label"
+                                                id="demo-simple-select"
+                                                value={roomType}
+                                                label="Room Type"
+                                                onChange={handleChangeRoomType}
+                                            >
+                                                <MenuItem value={11}>AC Room</MenuItem>
+                                                <MenuItem value={12}>Non AC Room</MenuItem>
 
-                                        </Select>
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={3}>
-                                    <FormControl fullWidth>
-                                        <InputLabel id="demo-simple-select-label">Room No.</InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                            value={roomNo}
+                                            </Select>
+                                        </FormControl>
+                                    </Grid>
+
+
+
+                                    <Grid item xs={3}>
+                                        <FormControl fullWidth>
+                                            <InputLabel id="demo-simple-select-label">Sharing</InputLabel>
+                                            <Select sx={{ minHeight: 44 }}
+                                                labelId="demo-simple-select-label"
+                                                id="demo-simple-select"
+                                                value={sharing}
+                                                label="Sharing"
+                                                onChange={handleChangeSharing}
+                                            >
+                                                <MenuItem value={13}>1 sharing</MenuItem>
+                                                <MenuItem value={14}>2 sharing</MenuItem>
+                                                <MenuItem value={15}>3 sharing</MenuItem>
+                                                <MenuItem value={16}>4 sharing</MenuItem>
+
+                                            </Select>
+                                        </FormControl>
+                                    </Grid>
+                                    <Grid item xs={3}>
+                                        <FormControl fullWidth>
+                                            <InputLabel id="demo-simple-select-label">Room No.</InputLabel>
+                                            <Select sx={{ minHeight: 44 }}
+                                                labelId="demo-simple-select-label"
+                                                id="demo-simple-select"
+                                                value={roomNo}
+                                                label="Room No."
+                                                onChange={handleChangeRoomNo}
+                                            >
+                                                <MenuItem value={17}>A1</MenuItem>
+                                                <MenuItem value={18}>A2</MenuItem>
+                                                <MenuItem value={19}>A3</MenuItem>
+                                                <MenuItem value={21}>A4</MenuItem>
+                                                <MenuItem value={22}>A5</MenuItem>
+                                            </Select>
+                                        </FormControl>
+                                    </Grid>
+                                    <Grid item xs={3}>
+                                        <FormControl fullWidth>
+                                            <InputLabel id="demo-simple-select-label">Bed No.</InputLabel>
+                                            <Select sx={{ minHeight: 44 }}
+                                                labelId="demo-simple-select-label"
+                                                id="demo-simple-select"
+                                                value={bedNo}
+                                                label="Bed No."
+                                                onChange={handleChangeBedNo}
+                                            >
+                                                <MenuItem value={2}>A1-B1</MenuItem>
+                                                <MenuItem value={23}>A1-B2</MenuItem>
+                                                <MenuItem value={24}>A1-B3</MenuItem>
+                                                <MenuItem value={25}>A1-B4</MenuItem>
+                                                <MenuItem value={26}>A1-B5</MenuItem>
+                                            </Select>
+                                        </FormControl>
+                                    </Grid>
+
+                                    <Grid item xs={3}>
+                                        <FormControl fullWidth>
+                                            <InputLabel id="demo-simple-select-label">Shelf No.</InputLabel>
+                                            <Select sx={{ minHeight: 44 }}
+                                                labelId="demo-simple-select-label"
+                                                id="demo-simple-select"
+                                                value={shelfNo}
+                                                label="Shelf No."
+                                                onChange={handleChangeShelfNo}
+                                            >
+                                                <MenuItem value={27}>A1-S1</MenuItem>
+                                                <MenuItem value={28}>A1-S2</MenuItem>
+                                                <MenuItem value={29}>A1-S3</MenuItem>
+                                                <MenuItem value={30}>A1-S4</MenuItem>
+                                                <MenuItem value={31}>A1-S5</MenuItem>
+                                            </Select>
+                                        </FormControl>
+                                    </Grid>
+                                    <Grid item xs={3}>
+                                        <Textfield
+                                            name="secondaryPhone"
                                             label="Room No."
-                                            onChange={handleChangeRoomNo}
-                                        >
-                                            <MenuItem value={17}>A1</MenuItem>
-                                            <MenuItem value={18}>A2</MenuItem>
-                                            <MenuItem value={19}>A3</MenuItem>
-                                            <MenuItem value={21}>A4</MenuItem>
-                                            <MenuItem value={22}>A5</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={3}>
-                                    <FormControl fullWidth>
-                                        <InputLabel id="demo-simple-select-label">Bed No.</InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                            value={bedNo}
+
+                                        />
+                                    </Grid>
+                                    <Grid item xs={3}>
+                                        <Textfield
+                                            name="bedNum"
                                             label="Bed No."
-                                            onChange={handleChangeBedNo}
-                                        >
-                                            <MenuItem value={2}>A1-B1</MenuItem>
-                                            <MenuItem value={23}>A1-B2</MenuItem>
-                                            <MenuItem value={24}>A1-B3</MenuItem>
-                                            <MenuItem value={25}>A1-B4</MenuItem>
-                                            <MenuItem value={26}>A1-B5</MenuItem>
-                                        </Select>
-                                    </FormControl>
+                                        />
+                                    </Grid>
+
+                                    <Grid item xs={12}>
+                                        <Textfield
+                                            name="checkinNotes"
+
+                                            label="Remarks"
+                                            multiline={true}
+                                            rows={4}
+                                        />
+                                    </Grid>
+
+
+                                    <Divider variant="middle" />
+                                    <Grid item xs={4} justifyContent='center'>
+                                        <Stack spacing={2} direction="row">
+                                            <Button variant="contained" sx={{ color:"white" }}>Add</Button>
+                                            <Button variant="contained" color="error">Update</Button>
+                                            <Button variant="contained">Delete</Button>
+                                        </Stack>
+                                    </Grid>
+
+
                                 </Grid>
 
-                                <Grid item xs={3}>
-                                    <FormControl fullWidth>
-                                        <InputLabel id="demo-simple-select-label">Shelf No.</InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                            value={shelfNo}
-                                            label="Shelf No."
-                                            onChange={handleChangeShelfNo}
-                                        >
-                                            <MenuItem value={27}>A1-S1</MenuItem>
-                                            <MenuItem value={28}>A1-S2</MenuItem>
-                                            <MenuItem value={29}>A1-S3</MenuItem>
-                                            <MenuItem value={30}>A1-S4</MenuItem>
-                                            <MenuItem value={31}>A1-S5</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={3}>
-                                    <Textfield
-                                        name="secondaryPhone"
-                                        label="Room No."
-
-                                    />
-                                </Grid>
-                                <Grid item xs={3}>
-                                    <Textfield
-                                        name="bedNum"
-                                        label="Bed No."
-                                    />
-                                </Grid>
-
-                                <Grid item xs={12}>
-                                    <Textfield
-                                        name="checkinNotes"
-
-                                        label="Remarks"
-                                        multiline={true}
-                                        rows={4}
-                                    />
-                                </Grid>
+                            </Form>
 
 
-                                <Divider variant="middle" />
-                                <Grid item xs={4} justifyContent='center'>
-                                    <Button>
-                                        <Divider>
+                        </Formik>
 
-                                        </Divider>
-                                        Submit
-                                    </Button>
-                                </Grid>
+                    </div>
 
-
-                            </Grid>
-
-                        </Form>
-
-
-                    </Formik>
-
-                </div>
-
-            </Container>
-            {/* <Container>
+                </Container>
+                {/* <Container>
                     <div>
                     <Grid container spacing={2} columns={16}>
     <Grid item xs={3}>
@@ -397,8 +398,8 @@ const GuestLoginForm = () => {
     </Grid>
                     </div>
                 </Container> */}
-        </Grid>
-    </Grid >
+            </Grid>
+        </Grid >
 
     );
 
